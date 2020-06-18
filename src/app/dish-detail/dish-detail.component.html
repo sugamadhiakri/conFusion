@@ -25,8 +25,10 @@
         <button mat-button (click)="goBack()">BACK</button>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
-      <span class="flex-spacer"></span>
-        <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
+        <span class="flex-spacer"></span>
+        <button mat-button [routerLink]="['/dishdetail', next]">
+          <span class="fa fa-chevron-right fa-lg"></span>
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -46,5 +48,57 @@
         </p>
       </mat-list-item>
     </mat-list>
+
+    <div>
+      <form
+        novalidate
+        [formGroup]="ratingForm"
+        #rform="ngForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <p>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              formControlName="name"
+              placeholder="Name"
+              type="text"
+              required
+            />
+            <mat-error *ngIf="ratingErrors.name">{{
+              ratingErrors.name
+            }}</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            placeholder="Rating"
+            formControlName="rating"
+            tickInterval="1"
+            min="1"
+            max="5"
+          ></mat-slider>
+        </p>
+        <p>
+          <mat-form-field class="full-width">
+            <textarea
+              matInput
+              formControlName="message"
+              placeholder="Your Rating Feedback"
+              rows="5"
+            ></textarea>
+          </mat-form-field>
+        </p>
+        <button
+          type="submit"
+          mat-button
+          class="background-primary text-floral-white"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   </div>
 </div>

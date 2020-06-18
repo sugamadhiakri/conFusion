@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { DishDetailComponent } from './dish-detail/dish-detail.component';
 import { DishService } from './services/dish.service';
@@ -49,6 +50,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     FlexLayoutModule,
     MatListModule,
+    MatSliderModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
